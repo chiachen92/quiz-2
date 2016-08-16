@@ -1,0 +1,35 @@
+<h1>hello world</h1>
+
+ <table>
+   <thead>
+   <tr>
+     <th>Name</th>
+     <th>Email</th>
+     <th>Department</th>
+     <th>Message</th>
+     <th>Actions</th>
+   </tr>
+   </thead>
+<% @supports.each do |x|%>
+   <tbody>
+
+
+   <tr>
+     <td><%=x.name%></td>
+     <td><%=x.email %></td>
+     <td><%=x.department%></td>
+     <td><%=x.message%></td>
+     <td><%=link_to "Edit", support_path(x.id)%><%=link_to "Delete", support_path(x.id),
+     method: :delete, data: {confirm: "Are you sure?"}
+     %>
+     <%if x.mark == "undone"%>
+       <%="not done"%>
+     <%else%>
+       <%="done"%>
+     <%end%>
+     </td>
+   </tr>
+   </tbody>
+<%end%>
+ </table>
+<%= paginate @supports %>

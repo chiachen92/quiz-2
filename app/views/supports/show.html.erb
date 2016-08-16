@@ -1,0 +1,23 @@
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Department</th>
+    <th>Message</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+
+  <tbody>
+
+
+  <tr>
+    <td><%=@supports.name%></td>
+    <td><%=@supports.email %></td>
+    <td><%=@supports.department%></td>
+    <td><%=@supports.message%></td>
+    <td><%=link_to "Edit", edit_support_path(@supports.id)%>Delete, Not Done</td>
+  </tr>
+  </tbody>
+</table>

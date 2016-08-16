@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quiz</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>,
+
+    <div>
+    <%= link_to "home", root_path %> |
+    <%= link_to "new", new_support_path %>
+  </div>
+  <div style= "float: right">
+    <%= form_tag supports_path, :method => 'get' do %>
+    <p>
+        <%= text_field_tag :keyword, params[:keyword] %>
+        <%= submit_tag "Search", :name => nil %>
+    </p>
+    <% end %>
+  </div>
+    <%= yield %>
+  </body>
+</html>
